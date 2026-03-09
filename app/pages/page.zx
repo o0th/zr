@@ -1,0 +1,11 @@
+pub fn Page(ctx: zx.PageContext) !zx.Component {
+    return (
+        <main @allocator={ctx.arena}>
+			<h1 class="text-sm">Hello world</h1>
+        </main>
+    );
+}
+var count: i128 = 0;
+
+const zx = @import("zx");
+pub const CounterComponent = @import("./client.zig").CounterComponent;
