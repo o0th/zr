@@ -1,0 +1,29 @@
+const AddressProps = struct {
+	address: zr.Address,
+};
+
+pub fn Address(allocator: zx.Allocator, props: AddressProps) zx.Component {
+    return (
+        <div @allocator={allocator}>
+			{if (props.address.show) (
+				<p class="flex gap-1">
+					{if (props.address.street) |street| (
+						<span class="text-md">{street},</span>
+					)}
+					{if (props.address.zip) |zip| (
+						<span class="text-md">{zip},</span>
+					)}
+					{if (props.address.city) |city| (
+						<span class="text-md">{city},</span>
+					)}
+					{if (props.address.country) |country| (
+						<span class="text-md">{country}</span>
+					)}
+				</p>
+			)}
+		</div>
+	);
+}
+
+const zx = @import("zx");
+const zr = @import("../zr.zig");

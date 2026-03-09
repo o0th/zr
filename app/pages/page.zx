@@ -6,6 +6,9 @@ pub fn Page(ctx: zx.PageContext) !zx.Component {
 				{if (rs.headline) |headline| (
 					<Headline headline={headline} />
 				)}
+				{if (rs.address) |address| (
+					<Address address={address} />
+				)}
 				{if (rs.skills) |skills| (
 					<Skills skills={skills} />
 				)}
@@ -28,6 +31,7 @@ const zr = @import("../zr.zig");
 
 pub const Sidebar = @import("../components/sidebar.zig").Sidebar;
 pub const Headline = @import("../components/headline.zig").Headline;
+pub const Address = @import("../components/address.zig").Address;
 pub const Skills = @import("../components/skills.zig").Skills;
 pub const Languages = @import("../components/languages.zig").Languages;
 pub const Interests = @import("../components/interests.zig").Interests;

@@ -4,6 +4,13 @@
     "name": "Sabato Luca Guadagno",
     "title": "Software Engineer"
   },
+  "address": {
+    "show": true,
+    "street": "Pfingstweidstrasse 104D",
+    "city": "Zurich",
+    "zip": "8005",
+    "country": "Switzerland"
+  },
   "skills": [
     {
       "show": true,

@@ -6,6 +6,14 @@ pub const Headline = struct {
     title: ?[]const u8 = null,
 };
 
+pub const Address = struct {
+    show: bool = true,
+    street: ?[]const u8 = null,
+    city: ?[]const u8 = null,
+    zip: ?[]const u8 = null,
+    country: ?[]const u8 = null,
+};
+
 pub const Skill = struct {
     show: bool = true,
     name: ?[]const u8 = null,
@@ -27,6 +35,7 @@ pub const Interest = struct {
 
 pub const Resume = struct {
     headline: ?Headline = null,
+    address: ?Address = null,
     skills: ?[]Skill = null,
     languages: ?[]Language = null,
     interests: ?[]Interest = null,
