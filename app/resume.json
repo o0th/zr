@@ -1,6 +1,9 @@
 {
-  "name": "Sabato Luca Guadagno",
-  "title": "Software Engineer",
+  "headline": {
+    "show": true,
+    "name": "Sabato Luca Guadagno",
+    "title": "Software Engineer"
+  },
   "skills": [
     {
       "show": true,

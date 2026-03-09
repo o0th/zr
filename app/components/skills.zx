@@ -1,18 +1,16 @@
 const SkillsProps = struct {
-	rs: zr.Resume,
+	skills: []zr.Skill,
 };
 
 pub fn Skills(allocator: zx.Allocator, props: SkillsProps) zx.Component {
     return (
         <div @allocator={allocator}>
-			{if (props.rs.skills) |skills| (
-				<div class="p-2">
-					<p class="text-xl">Skills</p>
-					{for (skills) |skill| (
-						<Skill skill={skill} />
-					)}
-				</div>
-			)}
+			<div class="p-2">
+				<p class="text-xl">Skills</p>
+				{for (props.skills) |skill| (
+					<Skill skill={skill} />
+				)}
+			</div>
 		</div>
 	);
 }

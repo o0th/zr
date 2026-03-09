@@ -1,5 +1,11 @@
 const std = @import("std");
 
+pub const Headline = struct {
+    show: bool = true,
+    name: ?[]const u8 = null,
+    title: ?[]const u8 = null,
+};
+
 pub const Skill = struct {
     show: bool = true,
     name: ?[]const u8 = null,
@@ -14,9 +20,7 @@ pub const Language = struct {
 };
 
 pub const Resume = struct {
-    name: ?[]const u8 = null,
-    title: ?[]const u8 = null,
-
+    headline: ?Headline = null,
     skills: ?[]Skill = null,
     languages: ?[]Language = null,
 };

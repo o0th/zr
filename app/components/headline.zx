@@ -1,15 +1,19 @@
 const HeadlineProps = struct {
-	rs: zr.Resume,
+	headline: zr.Headline,
 };
 
 pub fn Headline(allocator: zx.Allocator, props: HeadlineProps) zx.Component {
     return (
         <div @allocator={allocator}>
-			{if (props.rs.name) |name| (
-				<p class="text-xl">{name}</p>
-			)}
-			{if (props.rs.title) |title| (
-				<p class="text-md">{title}</p>
+			{if (props.headline.show) (
+				<>
+					{if (props.headline.name) |name| (
+						<p class="text-xl">{name}</p>
+					)}
+					{if (props.headline.title) |title| (
+						<p class="text-md">{title}</p>
+					)}
+				</>
 			)}
         </div>
     );

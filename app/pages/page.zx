@@ -3,9 +3,9 @@ pub fn Page(ctx: zx.PageContext) !zx.Component {
     return (
         <main @allocator={ctx.arena} class="flex h-screen">
 			<Sidebar>
-				<Headline rs={rs} />
-				<Skills rs={rs} />
-				<Languages rs={rs} />
+				{if (rs.headline) |headline| (<Headline headline={headline} />) }
+				{if (rs.skills) |skills| (<Skills skills={skills} />) }
+				{if (rs.languages) |languages| (<Languages languages={languages} />) }
 			</Sidebar>
 			<div class="w-2/3">
 				<p class="text-3xl font-bold">Hello, world!</p>
