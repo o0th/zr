@@ -1,0 +1,13 @@
+const SidebarProps = struct {
+	children: zx.Component,
+};
+
+pub fn Sidebar(allocator: zx.Allocator, props: SidebarProps) zx.Component {
+    return (
+		<div @allocator={allocator} class="w-1/3 bg-sidebar-background text-sidebar-foreground">
+			{props.children}
+		</div>
+	);
+}
+
+const zx = @import("zx");

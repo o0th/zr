@@ -1,0 +1,39 @@
+const SkillsProps = struct {
+	rs: zr.Resume,
+};
+
+pub fn Skills(allocator: zx.Allocator, props: SkillsProps) zx.Component {
+    return (
+        <div @allocator={allocator}>
+			{if (props.rs.skills) |skills| (
+				<div class="p-2">
+					<p class="text-xl">Skills</p>
+					{for (skills) |skill| (
+						<Skill skill={skill} />
+					)}
+				</div>
+			)}
+		</div>
+	);
+}
+
+const SkillProps = struct {
+	skill: zr.Skill,
+};
+
+pub fn Skill(allocator: zx.Allocator, props: SkillProps) zx.Component {
+	return (
+        <div @allocator={allocator}>
+			{if (props.skill.show) (
+				<>
+					<p class="text-md font-bold">{props.skill.name}</p>
+					<p class="text-md italic">{props.skill.exp}</p>
+					<p class="text-md">{props.skill.sub}</p>
+				</>
+			)}
+		</div>
+	);
+}
+
+const zx = @import("zx");
+const zr = @import("../zr.zig");

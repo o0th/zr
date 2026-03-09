@@ -1,8 +1,16 @@
-pub fn Headline(allocator: zx.Allocator, props: struct { rs: zr.Resume }) zx.Component {
+const HeadlineProps = struct {
+	rs: zr.Resume,
+};
+
+pub fn Headline(allocator: zx.Allocator, props: HeadlineProps) zx.Component {
     return (
         <div @allocator={allocator}>
-            <p>{props.rs.name}</p>
-            <p>{props.rs.title}</p>
+			{if (props.rs.name) |name| (
+				<p class="text-xl">{name}</p>
+			)}
+			{if (props.rs.title) |title| (
+				<p class="text-md">{title}</p>
+			)}
         </div>
     );
 }

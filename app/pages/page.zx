@@ -1,14 +1,13 @@
 pub fn Page(ctx: zx.PageContext) !zx.Component {
     const rs = try zr.parse(ctx.arena);
     return (
-        <main @allocator={ctx.arena}>
-			<div class="flex h-screen">
-				<div class="w-1/3 bg-sidebar-background text-sidebar-foreground">
-					<Headline rs={rs} />
-				</div>
-				<div class="w-2/3">
-					<p class="text-3xl font-bold">Hello, world!</p>
-				</div>
+        <main @allocator={ctx.arena} class="flex h-screen">
+			<Sidebar>
+				<Headline rs={rs} />
+				<Skills rs={rs} />
+			</Sidebar>
+			<div class="w-2/3">
+				<p class="text-3xl font-bold">Hello, world!</p>
 			</div>
         </main>
     );
@@ -17,4 +16,6 @@ pub fn Page(ctx: zx.PageContext) !zx.Component {
 const zx = @import("zx");
 const zr = @import("../zr.zig");
 
+pub const Sidebar = @import("../components/sidebar.zig").Sidebar;
 pub const Headline = @import("../components/headline.zig").Headline;
+pub const Skills = @import("../components/skills.zig").Skills;

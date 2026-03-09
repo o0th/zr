@@ -1,4 +1,48 @@
 {
   "name": "Sabato Luca Guadagno",
-  "title": "Software Engineer"
+  "title": "Software Engineer",
+  "skills": [
+    {
+      "show": true,
+      "name": "JavaScript / TypeScript",
+      "exp": "10+ years",
+      "sub": "Express, Koa, React, Redux."
+    },
+    {
+      "show": true,
+      "name": "Go",
+      "exp": "6+ years",
+      "sub": "Terraform providers, Kubernetes operators, sqlc."
+    },
+    {
+      "show": true,
+      "name": "Rust",
+      "exp": "2+ years",
+      "sub": "Yew, Workers-rs, Tokio"
+    },
+    {
+      "show": true,
+      "name": "DevOps",
+      "exp": "6+ years",
+      "sub": "Kubernetes, Helm, Terraform, Docker, Ansible, Github Actions, Gitlab CI/CD."
+    },
+    {
+      "show": true,
+      "name": "Databases",
+      "exp": "10+ years",
+      "sub": "Postgres, Mongo, MySQL, Redis."
+    },
+    {
+      "show": true,
+      "name": "AWS",
+      "exp": "6+ years",
+      "sub": "EKS, ECS, EC2, RDS, S3, SNS, SQS, Lambda, DynamoDB, Cloudwatch, Cloudformation."
+    },
+    {
+      "show": true,
+      "name": "Cloudflare",
+      "exp": "2+ years",
+      "sub": "Workers, Pages, D1"
+    }
+  ]
 }
