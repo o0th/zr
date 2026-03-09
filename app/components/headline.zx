@@ -1,0 +1,11 @@
+pub fn Headline(allocator: zx.Allocator, props: struct { rs: zr.Resume }) zx.Component {
+    return (
+        <div @allocator={allocator}>
+            <p>{props.rs.name}</p>
+            <p>{props.rs.title}</p>
+        </div>
+    );
+}
+
+const zx = @import("zx");
+const zr = @import("../zr.zig");

@@ -6,7 +6,7 @@ pub fn Layout(ctx: zx.LayoutContext, children: zx.Component) zx.Component {
                 <link rel="stylesheet" href="/assets/style.css" />
             </head>
 
-            <body>
+            <body class="bg-background text-foreground">
                 {children}
             </body>
         </html>
