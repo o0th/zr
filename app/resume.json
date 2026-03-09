@@ -44,5 +44,22 @@
       "exp": "2+ years",
       "sub": "Workers, Pages, D1"
     }
+  ],
+  "languages": [
+    {
+      "show": true,
+      "name": "Italian",
+      "exp": "Native"
+    },
+    {
+      "show": true,
+      "name": "English",
+      "exp": "Fluent"
+    },
+    {
+      "show": true,
+      "name": "German",
+      "exp": "Basic"
+    }
   ]
 }

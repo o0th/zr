@@ -5,6 +5,7 @@ pub fn Page(ctx: zx.PageContext) !zx.Component {
 			<Sidebar>
 				<Headline rs={rs} />
 				<Skills rs={rs} />
+				<Languages rs={rs} />
 			</Sidebar>
 			<div class="w-2/3">
 				<p class="text-3xl font-bold">Hello, world!</p>
@@ -19,3 +20,4 @@ const zr = @import("../zr.zig");
 pub const Sidebar = @import("../components/sidebar.zig").Sidebar;
 pub const Headline = @import("../components/headline.zig").Headline;
 pub const Skills = @import("../components/skills.zig").Skills;
+pub const Languages = @import("../components/languages.zig").Languages;

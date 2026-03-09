@@ -1,0 +1,37 @@
+const LanguagesProps = struct {
+	rs: zr.Resume,
+};
+
+pub fn Languages(allocator: zx.Allocator, props: LanguagesProps) zx.Component {
+	return (
+        <div @allocator={allocator}>
+			{if (props.rs.languages) |languages| (
+				<div class="p-2">
+					<p class="text-xl">Languages</p>
+					{for (languages) |language| (
+						<Language language={language} />
+					)}
+				</div>
+			)}
+		</div>
+	);
+}
+
+const LanguageProps = struct {
+	language: zr.Language,
+};
+
+pub fn Language(allocator: zx.Allocator, props: LanguageProps) zx.Component {
+	return (
+        <div @allocator={allocator}>
+			{if (props.language.show) (
+				<>
+					<p>{props.language.name} - {props.language.exp}</p>
+				</>
+			)}
+		</div>
+	);
+}
+
+const zx = @import("zx");
+const zr = @import("../zr.zig");
