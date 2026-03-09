@@ -19,10 +19,17 @@ pub const Language = struct {
     exp: ?[]const u8 = null,
 };
 
+pub const Interest = struct {
+    show: bool = true,
+    name: ?[]const u8 = null,
+    desc: ?[]const u8 = null,
+};
+
 pub const Resume = struct {
     headline: ?Headline = null,
     skills: ?[]Skill = null,
     languages: ?[]Language = null,
+    interests: ?[]Interest = null,
 };
 
 const json_bytes = @embedFile("resume.json");

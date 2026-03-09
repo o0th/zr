@@ -64,5 +64,32 @@
       "name": "German",
       "exp": "Basic"
     }
+  ],
+  "interests": [
+    {
+      "show": true,
+      "name": "Running",
+      "desc": "Participated in multiple 10k and one half-marathon races."
+    },
+    {
+      "show": false,
+      "name": "Tabletop RPGs",
+      "desc": "Played numerous D&D adventures as both Dungeon Master and player."
+    },
+    {
+      "show": true,
+      "name": "Volleyball",
+      "desc": "Played professionally in the Italian Amateur League and Pro League."
+    },
+    {
+      "show": true,
+      "name": "Photography",
+      "desc": "Enthusiast in wildlife and macro photography."
+    },
+    {
+      "show": true,
+      "name": "Snowboard",
+      "desc": "Seasonal snowboarder, always chasing powder during winter breaks."
+    }
   ]
 }

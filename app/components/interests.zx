@@ -1,0 +1,36 @@
+const InterestsProps = struct {
+	interests: []zr.Interest,
+};
+
+pub fn Interests(allocator: zx.Allocator, props: InterestsProps) zx.Component {
+    return (
+        <div @allocator={allocator}>
+			<div class="p-2">
+				<p class="text-xl">Interests</p>
+				{for (props.interests) |interest| (
+					<Interest interest={interest} />
+				)}
+			</div>
+		</div>
+	);
+}
+
+const InterestProps = struct {
+	interest: zr.Interest,
+};
+
+pub fn Interest(allocator: zx.Allocator, props: InterestProps) zx.Component {
+	return (
+		<div @allocator={allocator}>
+			{if (props.interest.show) (
+				<>
+					<p class="text-md font-bold">{props.interest.name}</p>
+					<p class="text-md">{props.interest.desc}</p>
+				</>
+			)}
+		</div>
+	);
+}
+
+const zx = @import("zx");
+const zr = @import("../zr.zig");
