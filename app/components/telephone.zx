@@ -1,0 +1,20 @@
+const TelephoneProps = struct {
+	telephone: zr.Telephone,
+};
+
+pub fn Telephone(allocator: zx.Allocator, props: TelephoneProps) zx.Component {
+    return (
+        <div @allocator={allocator}>
+			{if (props.telephone.show) (
+				<>
+					{if (props.telephone.value) |telephone| (
+						<p class="text-md">{telephone}</p>
+					)}
+				</>
+			)}
+        </div>
+    );
+}
+
+const zx = @import("zx");
+const zr = @import("../zr.zig");

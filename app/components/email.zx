@@ -1,0 +1,20 @@
+const EmailProps = struct {
+	email: zr.Email,
+};
+
+pub fn Email(allocator: zx.Allocator, props: EmailProps) zx.Component {
+    return (
+        <div @allocator={allocator}>
+			{if (props.email.show) (
+				<>
+					{if (props.email.value) |email| (
+						<p class="text-md">{email}</p>
+					)}
+				</>
+			)}
+        </div>
+    );
+}
+
+const zx = @import("zx");
+const zr = @import("../zr.zig");

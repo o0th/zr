@@ -8,10 +8,17 @@ pub const Headline = struct {
 
 pub const Address = struct {
     show: bool = true,
-    street: ?[]const u8 = null,
-    city: ?[]const u8 = null,
-    zip: ?[]const u8 = null,
-    country: ?[]const u8 = null,
+    value: ?[]const u8 = null,
+};
+
+pub const Email = struct {
+    show: bool = true,
+    value: ?[]const u8 = null,
+};
+
+pub const Telephone = struct {
+    show: bool = true,
+    value: ?[]const u8 = null,
 };
 
 pub const Skill = struct {
@@ -36,6 +43,8 @@ pub const Interest = struct {
 pub const Resume = struct {
     headline: ?Headline = null,
     address: ?Address = null,
+    email: ?Email = null,
+    telephone: ?Telephone = null,
     skills: ?[]Skill = null,
     languages: ?[]Language = null,
     interests: ?[]Interest = null,
@@ -44,5 +53,5 @@ pub const Resume = struct {
 const json_bytes = @embedFile("resume.json");
 
 pub fn parse(allocator: std.mem.Allocator) !Resume {
-    return std.json.parseFromSliceLeaky(Resume, allocator, json_bytes, .{});
+    return std.json.parseFromSliceLeaky(Resume, allocator, json_bytes, .{ .ignore_unknown_fields = true });
 }
